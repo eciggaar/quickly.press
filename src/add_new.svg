@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="331px" height="331px" viewBox="0 0 331 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g id="Group">
+                <rect id="Rectangle" fill="#D8D8D8" x="0" y="0" width="331" height="331"></rect>
+                <text id="add-new..." font-family="Dosis-Bold, Dosis" font-size="36" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="34.238" y="48">add new...</tspan>
+                </text>
+            </g>
+            <rect id="Rectangle-2" fill="#FFFFFF" x="156" y="166" width="20.4062266" height="116.863281" rx="10.2031133"></rect>
+            <path d="M107,225.146812 C107,219.542882 111.568089,215 117.203113,215 L214.308605,215 C219.943629,215 224.511719,219.542882 224.511719,225.146812 C224.511719,230.750741 219.943629,235.293624 214.308605,235.293624 L117.203113,235.293624 C111.568089,235.293624 107,230.750741 107,225.146812 Z" id="Rectangle-2" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

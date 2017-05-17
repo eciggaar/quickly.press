@@ -25,5 +25,7 @@ __pycache__/
 .ropeproject/
 .settings/
 
+.tags
+
 dist-packages/
 >>>>>>> Stashed changes
