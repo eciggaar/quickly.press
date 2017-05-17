@@ -1,7 +1,7 @@
 from django.db import models
 
-from backend.quickly.EmergencyButtonClient.models import EmergencyButtonClient
-from backend.quickly.User.models import User
+from backend.quickly.buttons.models import EmergencyButtonClient
+from backend.quickly.users.models import User
 
 
 class Schedule(models.Model):
