@@ -24,7 +24,7 @@ class Dashboard extends Component {
           </div>
         </section>
 
-        <section className="section">
+        <section>
           <div className="container">
             <div className="tile">
               <div className="tile">

@@ -1,7 +1,7 @@
 from django.db import models
 
 from ..buttons.models import EmergencyButtonClient
-from ..users.models import User
+from ..families.models import FamilyMember
 
 
 class Service(models.Model):
@@ -11,5 +11,5 @@ class Service(models.Model):
     """
     name = models.TextField()
     phone_number = models.CharField(max_length=15)
-    user = models.ForeignKey(User)
+    family_member = models.ForeignKey(FamilyMember)
     emergency_button_client = models.ForeignKey(EmergencyButtonClient)

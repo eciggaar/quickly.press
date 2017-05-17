@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'quickly.buttons',
     'quickly.schedules',
     'quickly.services',
-    'quickly.users',
+    'quickly.families',
     'quickly.panic',
 
     # Django Extensions is a collection of custom extensions for the Django
