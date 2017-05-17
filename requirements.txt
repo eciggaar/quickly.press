@@ -3,3 +3,5 @@
 #######################################################
 dj-database-url
 djangorestframework
+
+googlemaps
