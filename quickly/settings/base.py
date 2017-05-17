@@ -60,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 
 ROOT_URLCONF = 'quickly.urls'
@@ -97,6 +98,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost')
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -113,6 +117,9 @@ STATICFILES_DIRS = (
     os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir)), 'build'),
     os.path.join(os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir)), 'build'), 'static'),
 )
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
@@ -182,3 +189,6 @@ LOGGING = {
 }
 
 APPEND_SLASH = False
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
