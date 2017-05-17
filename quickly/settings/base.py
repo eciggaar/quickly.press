@@ -39,7 +39,10 @@ INSTALLED_APPS = (
     'rest_framework',
 
     # Project apps
-    # 'backend.apps'
+    'quickly.buttons',
+    'quickly.schedules',
+    'quickly.services',
+    'quickly.users',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.
