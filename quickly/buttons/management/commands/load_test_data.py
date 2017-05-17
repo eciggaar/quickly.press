@@ -23,10 +23,12 @@ class Command(BaseCommand):
                                                       language='nl')
         family_member_1 = FamilyMember.objects.create(phone_number='+31010101010',
                                                       email='test1@test.nl',
-                                                      emergency_button_client=client)
+                                                      emergency_button_client=client,
+                                                      name='Fam1')
         family_member_2 = FamilyMember.objects.create(phone_number='+31010101011',
                                                       email='test2@test.nl',
-                                                      emergency_button_client=client)
+                                                      emergency_button_client=client,
+                                                      name='Fam2')
         Schedule.objects.create(start=datetime(year=2017, month=1, day=1, hour=9, minute=0).time(),
                                 end=datetime(year=2017, month=1, day=1, hour=17, minute=0).time(),
                                 emergency_button_client=client,

@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 
 class FamilySerializer(serializers.HyperlinkedModelSerializer):
+    id = serializers.ReadOnlyField()
 
     class Meta:
         model = FamilyMember
