@@ -31,8 +31,18 @@ class Family extends Component {
 
     return (
       <div className="Family">
-        <h1 className="title">Family</h1>
-        <h2 className="subtitle">Edit the people who get notified in case of panic</h2>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title is-spaced">
+                Family
+              </h1>
+              <h2 className="subtitle">
+                Edit the people who get notified in case of panic
+              </h2>
+            </div>
+          </div>
+        </section>
 
         <table className="table">
           <colgroup width={100} />
