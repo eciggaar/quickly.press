@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { logo } from './images';
 
 class Header extends Component {
   render() {
     return (
-      <nav className="nav has-shadow">
+      <nav className="nav">
         <div className="container">
           <div className="nav-left">
-            <Link className="nav-item" to="/">
-
+            <Link className="nav-item is-paddingless" to="/">
+              <img src={logo} alt=""/>
             </Link>
           </div>
           <span className="nav-toggle">

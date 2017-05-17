@@ -2,28 +2,28 @@
 import { apiClient, Model, Collection } from 'mobx-rest'
 import adapter from 'mobx-rest-fetch-adapter'
 
-class User extends Model {
+class Member extends Model {
 
 }
 
-class Users extends Collection {
+class Family extends Collection {
   url() {
     return '/families';
   }
 
   model() {
-    return User;
+    return Member;
   }
 }
 
 class Store {
-  users;
+  family;
 
   constructor() {
-    this.users = new Users();
+    this.family = new Family();
   }
 
 }
 
-apiClient(adapter, { apiPath: '/api' })
+apiClient(adapter, { apiPath: 'http://localhost:3001' })
 export default new Store();
