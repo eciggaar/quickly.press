@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { logo } from './images';
+import './Header.css';
 
 class Header extends Component {
   render() {
     return (
+      <div>
+      <div className="columns is-gapless is-marginless header-colorbar">
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+        <div className="column"></div>
+      </div>
       <nav className="nav">
         <div className="container">
           <div className="nav-left">
@@ -28,6 +36,7 @@ class Header extends Component {
           </div>
         </div>
       </nav>
+    </div>
     );
   }
 }
