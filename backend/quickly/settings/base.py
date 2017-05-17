@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'quickly.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'quickly.wsgi.application'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

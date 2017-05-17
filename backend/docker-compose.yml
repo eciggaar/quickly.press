@@ -5,16 +5,16 @@ db:
     - "3306:3306"
   environment:
     # This is obviously not a safe configuration usage in production.
-    - MYSQL_DATABASE=backend
-    - MYSQL_USER=backend
-    - MYSQL_PASSWORD=backend
-    - MYSQL_ROOT_PASSWORD=backend
+    - MYSQL_DATABASE=quickly
+    - MYSQL_USER=quickly
+    - MYSQL_PASSWORD=quickly
+    - MYSQL_ROOT_PASSWORD=quickly
 
 web:
   build: .
   command: python manage.py runserver 0:8000
   volumes:
-    - .:/home/docker/backend
+    - .:/home/docker/quickly
   ports:
     # ext:int port.
     - "8005:8000"
@@ -23,4 +23,4 @@ web:
     - db
   environment:
     - DEBUG=1
-    - DATABASE_URL=mysql://backend:backend@db/backend
+    - DATABASE_URL=mysql://quickly:quickly@db/quickly
