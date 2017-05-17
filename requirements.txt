@@ -4,4 +4,5 @@
 dj-database-url
 djangorestframework
 
+messagebird
 googlemaps
