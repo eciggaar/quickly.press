@@ -8,7 +8,7 @@ from rest_framework.routers import DefaultRouter
 from quickly.buttons.api.view import ButtonViewSet
 from quickly.schedules.api.view import SchedulesViewSet
 from quickly.services.api.view import ServiceViewSet
-from quickly.users.api.view import UserViewSet
+from quickly.families.api.view import FamilyViewSet
 
 
 urlpatterns = [
@@ -21,7 +21,7 @@ router = DefaultRouter()
 router.register(r'api/schedules', SchedulesViewSet)
 router.register(r'api/services', ServiceViewSet)
 router.register(r'api/buttons', ButtonViewSet)
-router.register(r'api/users', UserViewSet)
+router.register(r'api/families', FamilyViewSet)
 urlpatterns += router.urls
 
 

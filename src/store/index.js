@@ -8,7 +8,7 @@ class User extends Model {
 
 class Users extends Collection {
   url() {
-    return '/users';
+    return '/families';
   }
 
   model() {
