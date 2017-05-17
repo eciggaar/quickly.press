@@ -5,7 +5,8 @@ import {
   government,
   add_new,
   logo,
-  settings
+  settings,
+  schedules
 } from './images';
 
 class Dashboard extends Component {
@@ -38,12 +39,12 @@ class Dashboard extends Component {
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/family"><img src={settings} alt="Add new"/></Link>
+                  <Link to="/family"><img src={settings} alt="Settings"/></Link>
                 </div>
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/family"><img src={add_new} alt="Add new"/></Link>
+                  <Link to="/schedules"><img src={schedules} alt="Schedules"/></Link>
                 </div>
               </div>
             </div>

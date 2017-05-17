@@ -3,11 +3,13 @@ import family from './family.svg';
 import government from './government.svg';
 import logo from './logo';
 import settings from './settings.svg';
+import schedules from './schedules.svg';
 
 export {
   add_new,
   family,
   government,
   logo,
-  settings
+  settings,
+  schedules
 }

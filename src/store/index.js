@@ -10,6 +10,10 @@ class Settings extends Model {
 
 }
 
+class Schedule extends Model {
+  
+}
+
 class Family extends Collection {
   url() {
     return '/families';
@@ -36,13 +40,25 @@ class Buttons extends Collection {
   // }
 }
 
+class Schedules extends Collection {
+  url() {
+    return '/schedules';
+  }
+
+  model() {
+    return Schedule;
+  }
+}
+
 class Store {
   family;
   buttons;
+  schedules
 
   constructor() {
     this.family = new Family();
     this.buttons = new Buttons();
+    this.schedules = new Schedules();
   }
 
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="331px" height="331px" viewBox="0 0 331 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <g id="Group-3">
+                <g id="Group" fill="#D8D8D8">
+                    <rect id="Rectangle" x="0" y="0" width="331" height="331"></rect>
+                </g>
+                <g id="Group-2" transform="translate(28.000000, 10.000000)" fill="#FFFFFF">
+                    <g id="Group" font-size="36" font-family="Dosis-Bold, Dosis" font-weight="bold">
+                        <text id="schedules">
+                            <tspan x="0.19" y="37">schedules</tspan>
+                        </text>
+                    </g>
+                    <rect id="Rectangle-2" x="122" y="117" width="20.4062266" height="116.863281" rx="10.2031133"></rect>
+                    <path d="M73,176.146812 C73,170.542882 77.5680894,166 83.2031133,166 L180.308605,166 C185.943629,166 190.511719,170.542882 190.511719,176.146812 C190.511719,181.750741 185.943629,186.293624 180.308605,186.293624 L83.2031133,186.293624 C77.5680894,186.293624 73,181.750741 73,176.146812 Z" id="Rectangle-2"></path>
+                </g>
+            </g>
+            <circle id="Oval-3" stroke="#D8D8D8" stroke-width="10" fill="#FFFFFF" cx="166" cy="182" r="64"></circle>
+            <rect id="Rectangle-3" fill="#D8D8D8" x="163" y="133" width="10" height="49" rx="5"></rect>
+            <rect id="Rectangle-3" fill="#D8D8D8" transform="translate(153.868310, 198.717163) rotate(40.000000) translate(-153.868310, -198.717163) " x="148.86831" y="180.717163" width="10" height="36" rx="5"></rect>
+        </g>
+    </g>
+</svg>
