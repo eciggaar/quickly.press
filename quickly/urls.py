@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic.base import TemplateView
+from django.contrib.staticfiles.views import serve
 from rest_framework.routers import DefaultRouter
 
 from quickly.buttons.api.view import ButtonViewSet
@@ -13,17 +13,21 @@ from quickly.families.api.view import FamilyViewSet
 from quickly.panic.api.views import PanicGet
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='spindle.html'), name='spindle'),
+    # / routes to index.html
+    url(r'^$', serve,
+        kwargs={'path': 'index.html'}),
+
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/panic/get/$', PanicGet.as_view()),
+    url(r'^api/', include(router.urls)),
 ]
 
 # Define routes, using the default router so the API is browsable.
 router = DefaultRouter()
-router.register(r'api/schedules', SchedulesViewSet)
-router.register(r'api/services', ServiceViewSet)
-router.register(r'api/buttons', ButtonViewSet)
-router.register(r'api/families', FamilyViewSet)
+router.register(r'api/schedules/?', SchedulesViewSet)
+router.register(r'api/services/?', ServiceViewSet)
+router.register(r'api/buttons/?', ButtonViewSet)
+router.register(r'api/families/?', FamilyViewSet)
 urlpatterns += router.urls
 
 
