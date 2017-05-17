@@ -28,6 +28,12 @@ class Buttons extends Collection {
   model() {
     return Settings;
   }
+
+  // @action getById(id) {
+  //   const model = this.model();
+  //   const instance = new model({ id })
+  //   instance.fetch()
+  // }
 }
 
 class Store {
@@ -37,10 +43,7 @@ class Store {
   constructor() {
     this.family = new Family();
     this.buttons = new Buttons();
-
   }
-
-
 
 }
 

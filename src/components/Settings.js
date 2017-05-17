@@ -7,33 +7,24 @@ class Settings extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      uuid: '',
-      phone_number: '',
-      address: ''
-    }
   }
 
-  async componentWillMount() {
+  componentWillMount() {
     const { store } = this.props;
-    const model = store.buttons.model();
-    const button = new model({ id: 1 });
-    await button.fetch();
-    this.setState(...button.attributes());
+    store.buttons.fetch()
   }
 
   render() {
     const { store } = this.props;
     const { buttons } = store;
+    const button = buttons.get(1);
 
-    if (buttons.isRequest('fetching')) {
+    if (buttons.isRequest('fetching') || !button) {
       return (
         <p>Loading settings ...</p>
       )
     }
 
-    const { state } = this;
     return (
       <div className="Settings">
         <Heading subtitle="Change your personal panic button settings">
@@ -44,8 +35,10 @@ class Settings extends Component {
           <div className="field">
             <label className="label">Panic button UUID</label>
             <p className="control">
-              <input className="input" type="text" value={state.uuid || ""} onChange={(e) => {
-                this.setState({ uuid: e.target.value });
+              <input className="input" type="text" value={button.get('button_uuid')} onChange={(e) => {
+                button.set('uuid', e.target.value);
+              }} onBlur={() => {
+                button.save({ button_uuid: button.get('button_uuid') })
               }}/>
             </p>
           </div>
@@ -53,8 +46,10 @@ class Settings extends Component {
           <div className="field">
             <label className="label">Your address</label>
             <p className="control">
-              <input className="input" type="text" value={state.address || ""} onChange={(e) => {
-                this.setState({ address: e.target.value });
+              <input className="input" type="text" value={button.get('address')} onChange={(e) => {
+                button.set('address', e.target.value);
+              }} onBlur={() => {
+                button.save({ address: button.get('address') })
               }}/>
             </p>
           </div>
@@ -62,8 +57,10 @@ class Settings extends Component {
           <div className="field">
             <label className="label">Phone number</label>
             <p className="control has-icons-left">
-              <input className="input" type="email" value={state.phone_number || ""} onChange={(e) => {
-                this.setState({ phone_number: e.target.value });
+              <input className="input" type="email" value={button.get('phone_number')} onChange={(e) => {
+                button.set('phone_number', e.target.value);
+              }} onBlur={() => {
+                button.save({ phone_number: button.get('phone_number') })
               }}/>
               <span className="icon is-small is-left">
                 <i className="fa fa-phone"></i>
