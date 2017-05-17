@@ -11,10 +11,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <section className="hero">
+        <section className="hero is-medium">
           <div className="hero-body">
             <div className="container has-text-centered">
-              <h1 className="title">
+              <h1 className="title is-spaced">
                 <img width={500} src={logo} alt="Quickly.press"/>
               </h1>
               <h2 className="subtitle">
@@ -27,7 +27,7 @@ class Dashboard extends Component {
         <section>
           <div className="container">
             <div className="tile">
-              <div className="tile">
+              <div className="tile is-bold">
                 <Link to="/family"><img src={family} alt="Family"/></Link>
               </div>
               <div className="tile">
