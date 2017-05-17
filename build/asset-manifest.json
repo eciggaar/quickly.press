@@ -1,10 +1,15 @@
 {
-  "main.css": "static/css/main.ee46dc31.css",
-  "main.css.map": "static/css/main.ee46dc31.css.map",
-  "main.js": "static/js/main.44d8c56a.js",
-  "main.js.map": "static/js/main.44d8c56a.js.map",
+  "main.css": "static/css/main.bf97d907.css",
+  "main.css.map": "static/css/main.bf97d907.css.map",
+  "main.js": "static/js/main.ca1677e4.js",
+  "main.js.map": "static/js/main.ca1677e4.js.map",
   "static/media/add_new.svg": "static/media/add_new.8e86984b.svg",
   "static/media/family.svg": "static/media/family.6aef3962.svg",
+  "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
+  "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
+  "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
+  "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
+  "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
   "static/media/government.svg": "static/media/government.7fc3e746.svg",
   "static/media/settings.svg": "static/media/settings.afa36ef1.svg"
 }
