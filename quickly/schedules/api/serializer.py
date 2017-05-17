@@ -6,3 +6,4 @@ class ScheduleSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Schedule
+        fields = '__all__'

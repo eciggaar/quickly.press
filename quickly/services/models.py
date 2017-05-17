@@ -4,7 +4,7 @@ from ..buttons.models import EmergencyButtonClient
 from ..users.models import User
 
 
-class Services(models.Model):
+class Service(models.Model):
     """
     Model which defines services that need to be contacted when a emergency
     occurs.
