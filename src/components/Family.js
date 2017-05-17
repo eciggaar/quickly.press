@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 import './Family.css';
 
 class Family extends Component {
+  componentWillMount() {
+    const { store } = this.props;
+    store.users.fetch();
+  }
+
   render() {
+    const { store } = this.props;
+    const { users } = store;
+
+    if (users.isRequest('fetching')) {
+      return (
+        <p>Loading users ...</p>
+      )
+    }
+
     return (
       <div className="Family">
         <h1 className="title">Family</h1>
@@ -10,10 +25,14 @@ class Family extends Component {
 
         <table className="table">
           <tbody>
-            <tr>
-              <td>Name</td>
-              <td>[edit actions]</td>
-            </tr>
+            {users.models.map(user => {
+              return (
+                <tr>
+                  <td>{user.name}</td>
+                  <td>[edit actions]</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
 
@@ -50,4 +69,4 @@ class Family extends Component {
   }
 }
 
-export default Family;
+export default inject('store')(observer(Family));
