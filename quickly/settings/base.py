@@ -110,6 +110,8 @@ LOGIN_REDIRECT_URL = '/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir)), 'build'),
+    os.path.join(os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir)), 'build'), 'static'),
 )
 
 
