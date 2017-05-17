@@ -2,6 +2,7 @@ import datetime
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.decorators import detail_route
 
 import messagebird
 
@@ -15,6 +16,18 @@ class PanicGet(APIView):
     A custom endpoint for GET request.
     """
     def get(self, request, format=None):
+        """
+        Receive and process the status received from MessageBird.
+        """
+
+        return Response({"success": True, "content": "Panic message sent."})
+
+class PanicPost(APIView):
+    """
+    A custom endpoint for PUSH request.
+    """
+    @detail_route(methods=['post'])
+    def post(self, request, format=None):
         """
         Send a message via MessagBird and return the status.
         """
@@ -43,4 +56,3 @@ class PanicGet(APIView):
             'Panic, panic, panic',
             {'language' : 'en-gb', 'voice': 'female' },
         )
-        return Response({"success": True, "content": "Panic message sent."})
