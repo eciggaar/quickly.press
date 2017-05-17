@@ -2,7 +2,13 @@
 ### Database                                        ###
 #######################################################
 dj-database-url
-djangorestframework
 
+django
+django_extensions
+djangorestframework
+django-debug-toolbar
+psycopg2
 messagebird
 googlemaps
+gunicorn
+whitenoise

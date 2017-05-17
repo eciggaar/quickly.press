@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Member from './Member';
+import Heading from './Heading';
 import './Family.css';
 
 class Family extends Component {
@@ -31,18 +32,9 @@ class Family extends Component {
 
     return (
       <div className="Family">
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title is-spaced">
-                Family
-              </h1>
-              <h2 className="subtitle">
-                Edit the people who get notified in case of panic
-              </h2>
-            </div>
-          </div>
-        </section>
+        <Heading subtitle="Edit the people who get notified in case of panic">
+          Family
+        </Heading>
 
         <table className="table">
           <colgroup width={100} />
@@ -85,7 +77,9 @@ class Family extends Component {
                 const { name, phone_number } = state
                 family.create({
                   name,
-                  phone_number
+                  phone_number,
+                  emergency_button_client: 'http://localhost:8005/api/buttons/1',
+                  email: 'info@example.com'
                 })
                 this.setState({
                   name: null,

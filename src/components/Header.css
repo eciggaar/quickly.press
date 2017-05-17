@@ -1,0 +1,24 @@
+.header-colorbar {
+  height: 10px;
+  margin-bottom: 0;
+}
+
+.header-colorbar > .column {
+  margin-bottom: 0;
+}
+
+.header-colorbar > .column:nth-child(4) {
+  background: #272f32;
+}
+
+.header-colorbar > .column:nth-child(2) {
+  background: #9dbdc6;
+}
+
+.header-colorbar > .column:nth-child(3) {
+  background: #ff3d2e;
+}
+
+.header-colorbar > .column:nth-child(1) {
+  background: #daeaef;
+}

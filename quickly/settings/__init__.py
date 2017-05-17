@@ -16,7 +16,7 @@ try:
 except:
     pass
 
-if os.getenv('ENVIRONMENT', 'local') == 'prod':
+if os.getenv('ENVIRONMENT', 'prod') == 'prod':
     from .prod import *  # noqa
 else:
     from .local import *  # noqa

@@ -5,6 +5,7 @@ import './App.css';
 import Family from './Family';
 import Header from './Header';
 import Footer from './Footer';
+import Settings from './Settings';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <div className="container">
             <Route exact path="/" component={Dashboard}/>
             <Route path="/family" component={Family}/>
+            <Route path="/settings" component={Settings}/>
           </div>
           <Footer/>
         </div>
