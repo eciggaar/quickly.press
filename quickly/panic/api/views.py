@@ -1,4 +1,5 @@
 import datetime
+import json
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -22,6 +23,7 @@ class PanicGet(APIView):
 
         return Response({"success": True, "content": "Panic message sent."})
 
+
 class PanicPost(APIView):
     """
     A custom endpoint for PUSH request.
@@ -31,6 +33,9 @@ class PanicPost(APIView):
         """
         Send a message via MessagBird and return the status.
         """
+        body_unicode = request.body.decode('utf-8')
+        # This is the actual post data
+        body = json.loads(body_unicode)
         reciepient = []
         user = EmergencyButtonClient.objects.first()
         current_time = datetime.datetime.now().time()
