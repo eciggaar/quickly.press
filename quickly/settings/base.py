@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'quickly.schedules',
     'quickly.services',
     'quickly.users',
+    'quickly.panic',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.

@@ -10,10 +10,12 @@ from quickly.schedules.api.view import SchedulesViewSet
 from quickly.services.api.view import ServiceViewSet
 from quickly.users.api.view import UserViewSet
 
+from quickly.panic.api.views import PanicGet
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='spindle.html'), name='spindle'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/panic/get/$', PanicGet.as_view()),
 ]
 
 # Define routes, using the default router so the API is browsable.
