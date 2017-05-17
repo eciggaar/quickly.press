@@ -12,24 +12,22 @@ from quickly.families.api.view import FamilyViewSet
 
 from quickly.panic.api.views import PanicGet
 
+# Define routes, using the default router so the API is browsable.
+router = DefaultRouter(trailing_slash=False)
+router.register(r'/schedules', SchedulesViewSet)
+router.register(r'/services', ServiceViewSet)
+router.register(r'/buttons', ButtonViewSet)
+router.register(r'/families', FamilyViewSet)
+
 urlpatterns = [
     # / routes to index.html
     url(r'^$', serve,
         kwargs={'path': 'index.html'}),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/panic/get/$', PanicGet.as_view()),
-    url(r'^api/', include(router.urls)),
+    url(r'^admin', include(admin.site.urls)),
+    url(r'^api/panic/get$', PanicGet.as_view()),
+    url(r'^api', include(router.urls)),
 ]
-
-# Define routes, using the default router so the API is browsable.
-router = DefaultRouter()
-router.register(r'api/schedules/?', SchedulesViewSet)
-router.register(r'api/services/?', ServiceViewSet)
-router.register(r'api/buttons/?', ButtonViewSet)
-router.register(r'api/families/?', FamilyViewSet)
-urlpatterns += router.urls
-
 
 if settings.DEBUG and settings.MEDIA_ROOT:
     urlpatterns += static(settings.MEDIA_URL,
