@@ -25,5 +25,5 @@ class Store {
 
 }
 
-apiClient(adapter, { apiPath: 'http://localhost:8005/api' })
+apiClient(adapter, { apiPath: '/api' })
 export default new Store();
