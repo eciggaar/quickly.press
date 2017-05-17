@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import family from './family.svg';
-import government from './government.svg';
-import add_new from './add_new.svg';
-import logo from './logo.svg';
+import {
+  family,
+  government,
+  add_new,
+  logo
+} from './images';
 
 class Dashboard extends Component {
   render() {
@@ -30,17 +32,17 @@ class Dashboard extends Component {
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/family"><img src={government} alt="Family"/></Link>
+                  <Link to="/family"><img src={government} alt="Government"/></Link>
                 </div>
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/family"><img src={add_new} alt="Family"/></Link>
+                  <Link to="/family"><img src={add_new} alt="Add new"/></Link>
                 </div>
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/family"><img src={add_new} alt="Family"/></Link>
+                  <Link to="/family"><img src={add_new} alt="Add new"/></Link>
                 </div>
               </div>
             </div>
