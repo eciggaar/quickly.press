@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -6,9 +7,9 @@ class Header extends Component {
       <nav className="nav has-shadow">
         <div className="container">
           <div className="nav-left">
-            <a className="nav-item">
+            <Link className="nav-item" to="/">
               [logo]
-            </a>
+            </Link>
           </div>
           <span className="nav-toggle">
             <span></span>
