@@ -20,10 +20,10 @@ urlpatterns = [
 
 # Define routes, using the default router so the API is browsable.
 router = DefaultRouter()
-router.register(r'api/schedules', SchedulesViewSet)
-router.register(r'api/services', ServiceViewSet)
-router.register(r'api/buttons', ButtonViewSet)
-router.register(r'api/families', FamilyViewSet)
+router.register(r'api/schedules/?', SchedulesViewSet)
+router.register(r'api/services/?', ServiceViewSet)
+router.register(r'api/buttons/?', ButtonViewSet)
+router.register(r'api/families/?', FamilyViewSet)
 urlpatterns += router.urls
 
 
