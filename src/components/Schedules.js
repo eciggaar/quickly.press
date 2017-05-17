@@ -52,18 +52,18 @@ class Schedules extends Component {
                 this.setState({ start: e.target.value });
               }}/>
               <span className="icon is-small is-left">
-                <i className="fa fa-user"></i>
+                <i className="fa fa-clock-o"></i>
               </span>
             </p>
           </div>
           <div className="field">
             <label className="label">Endtime</label>
             <p className="control has-icons-left">
-              <input className="input" type="email" value={state.end || ""} onChange={(e) => {
+              <input className="input" type="text" placeholder="Endtime" value={state.end || ""} onChange={(e) => {
                 this.setState({ end: e.target.value });
               }}/>
               <span className="icon is-small is-left">
-                <i className="fa fa-clock"></i>
+                <i className="fa fa-clock-o"></i>
               </span>
             </p>
           </div>
@@ -75,7 +75,7 @@ class Schedules extends Component {
                   start,
                   end,
                   emergency_button_client: 'http://localhost:8005/api/buttons/1',
-                  email: 'info@example.com'
+                  family_member: 'http://localhost:8005/api/families/1'
                 })
                 this.setState({
                   start: null,
