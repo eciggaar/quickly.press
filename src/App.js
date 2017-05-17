@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 import './App.css';
+import Header from './Header'
 
 class App extends Component {
   render() {
     return (
-      <div className={classNames('App', 'container')}>
-        <h1>Quickly Press</h1>
+      <div className="App">
+        <Header/>
+        <div className="container">
+          <h1 className="title">Quickly Press</h1>
+          <h2 className="subtitle">Manage your panic button</h2>
+        </div>
       </div>
     );
   }
