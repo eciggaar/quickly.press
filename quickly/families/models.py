@@ -11,4 +11,5 @@ class FamilyMember(models.Model):
     """
     phone_number = models.CharField(max_length=15)
     email = models.EmailField()
+    name = models.CharField(max_length=255, blank=True)
     emergency_button_client = models.ForeignKey(EmergencyButtonClient)
