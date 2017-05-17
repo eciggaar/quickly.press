@@ -11,8 +11,10 @@ class App extends Component {
       <Router basename="/panic">
         <div className="App">
           <Header/>
-          <Route exact path="/" component={Dashboard}/>
-          <Route path="/family" component={Family}/>
+          <div className="container">
+            <Route exact path="/" component={Dashboard}/>
+            <Route path="/family" component={Family}/>
+          </div>
           <Footer/>
         </div>
       </Router>
