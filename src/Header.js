@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 
 class Header extends Component {
   render() {
@@ -8,7 +9,7 @@ class Header extends Component {
         <div className="container">
           <div className="nav-left">
             <Link className="nav-item" to="/">
-              [logo]
+              <img src={logo} alt="Quickly.press"/>
             </Link>
           </div>
           <span className="nav-toggle">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="191px" viewBox="0 0 1000 191" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval" transform="translate(0.000000, -12.000000)">
+            <circle fill="#D8D8D8" fill-rule="evenodd" cx="95.5" cy="107.5" r="95.5"></circle>
+            <path d="M96,127.484375 C126.927946,127.484375 152,121.334196 152,90.40625 C152,59.478304 126.927946,57 96,57 C65.072054,57 40,59.478304 40,90.40625 C40,121.334196 65.072054,127.484375 96,127.484375 Z" id="Oval-2" fill="#D8D8D8" fill-rule="evenodd"></path>
+            <rect id="Rectangle" fill="#60A2FC" fill-rule="evenodd" x="40" y="95" width="112" height="32"></rect>
+            <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(40.000000, 56.000000)" fill="#60A2FC">
+                <g id="Oval-2">
+                    <path d="M56,71.078125 C86.927946,71.078125 112,64.927946 112,34 C112,3.07205401 86.927946,0.59375 56,0.59375 C25.072054,0.59375 0,3.07205401 0,34 C0,64.927946 25.072054,71.078125 56,71.078125 Z"></path>
+                    <path d="M56,103.078125 C86.927946,103.078125 112,96.927946 112,66 C112,35.072054 86.927946,32.59375 56,32.59375 C25.072054,32.59375 0,35.072054 0,66 C0,96.927946 25.072054,103.078125 56,103.078125 Z"></path>
+                </g>
+            </g>
+            <text id="quickly.press" font-family="Dosis-Bold, Dosis" font-size="144" font-weight="bold">
+                <tspan x="242.836" y="148" fill="#989898">quickly</tspan>
+                <tspan x="660.148" y="148" fill="#60A2FC">.</tspan>
+                <tspan x="687.652" y="148" fill="#989898">press</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
