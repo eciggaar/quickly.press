@@ -28,7 +28,7 @@ class Header extends Component {
           <div className="nav-right nav-menu">
             <Link to="/settings" className="nav-item is-tab">
               <figure className="image is-16x16" style={{ marginRight: '8px'}}>
-                <img src="http://bulma.io/images/jgthms.png" alt="User"/>
+                <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/12079190_10207381455322317_5529711437017744926_n.jpg?oh=685f5286ecf9f0665638a4f9926206ad&oe=59BAB1C9" alt="User"/>
               </figure>
               John D.
             </Link>
