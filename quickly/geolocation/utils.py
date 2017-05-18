@@ -13,7 +13,9 @@ def find_address(lat, long):
     except HTTPError as e:
         print(e)
 
-# https://maps.google.com/?q=52.3862755,4.8728798
+
+def maps_web_address(lat, long):
+    return 'https://maps.google.com/?q=%s%s' % (lat, long)
 
 print('good')
 print(find_address(52.3862755, 4.8728798))
