@@ -42,8 +42,10 @@ class Panic(APIView):
             raise NotFound
 
         # get lat long, randomize a little bit for demo purpose
-        lat = float(request.data.get('lat', 52.3862755)) + random.randint(-10, 10) * 0.0001
-        long = float(request.data.get('long', 4.8728798)) + random.randint(-10, 10) * 0.0001
+        # lat = float(request.data.get('lat', 52.3862755)) + random.randint(-10, 10) * 0.0001
+        # long = float(request.data.get('long', 4.8728798)) + random.randint(-10, 10) * 0.0001
+        lat = 52.3862755
+        long = 4.8728798
         self.coordinates = (lat, long)
 
         api_token = 'RTDWFuAIoGzINuBTRDl5uDOiO'
