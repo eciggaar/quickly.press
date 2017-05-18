@@ -2,7 +2,7 @@ from quickly.schedules.models import Schedule
 from rest_framework import serializers
 
 
-class ScheduleSerializer(serializers.HyperlinkedModelSerializer):
+class ScheduleSerializer(serializers.ModelSerializer):
     id = serializers.ReadOnlyField()
 
     class Meta:
