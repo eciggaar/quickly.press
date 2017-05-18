@@ -69,7 +69,7 @@ class Schedules extends Component {
           </div>
           <div className="field">
             <p className="control">
-              <button className="button is-primary" disabled={!state.start || !state.end} onClick={() => {
+              <button className="button is-success" disabled={!state.start || !state.end} onClick={() => {
                 const { start, end } = state
                 schedules.create({
                   start,

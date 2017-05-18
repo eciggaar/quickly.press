@@ -73,7 +73,7 @@ class Family extends Component {
           </div>
           <div className="field">
             <p className="control">
-              <button className="button is-primary" disabled={!state.name || !state.phone_number} onClick={() => {
+              <button className="button is-success" disabled={!state.name || !state.phone_number} onClick={() => {
                 const { name, phone_number } = state
                 family.create({
                   name,
