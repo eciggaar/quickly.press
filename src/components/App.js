@@ -7,7 +7,6 @@ import Government from './Government';
 import Header from './Header';
 import Footer from './Footer';
 import Settings from './Settings';
-import Schedules from './Schedules';
 
 class App extends Component {
   render() {
@@ -19,7 +18,6 @@ class App extends Component {
             <Route exact path="/" component={Dashboard}/>
             <Route path="/family" component={Family}/>
             <Route path="/settings" component={Settings}/>
-            <Route path="/schedules" component={Schedules}/>
             <Route path="/government" component={Government}/>
           </div>
           <Footer/>
