@@ -11,7 +11,11 @@ class Settings extends Model {
 }
 
 class Schedule extends Model {
-  
+
+}
+
+class GovernmentMember extends Model {
+
 }
 
 class Family extends Collection {
@@ -21,6 +25,16 @@ class Family extends Collection {
 
   model() {
     return Member;
+  }
+}
+
+class Government extends Collection {
+  url() {
+    return '/services';
+  }
+
+  model() {
+    return GovernmentMember;
   }
 }
 
@@ -53,12 +67,14 @@ class Schedules extends Collection {
 class Store {
   family;
   buttons;
-  schedules
+  schedules;
+  government;
 
   constructor() {
     this.family = new Family();
     this.buttons = new Buttons();
     this.schedules = new Schedules();
+    this.government = new Government();
   }
 
 }

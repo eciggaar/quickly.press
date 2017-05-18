@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import './App.css';
 import Family from './Family';
+import Government from './Government';
 import Header from './Header';
 import Footer from './Footer';
 import Settings from './Settings';
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/family" component={Family}/>
             <Route path="/settings" component={Settings}/>
             <Route path="/schedules" component={Schedules}/>
+            <Route path="/government" component={Government}/>
           </div>
           <Footer/>
         </div>
