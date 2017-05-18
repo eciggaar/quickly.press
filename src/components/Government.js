@@ -78,8 +78,8 @@ class Government extends Component {
                 government.create({
                   name,
                   phone_number,
-                  emergency_button_client: 'http://localhost:8005/api/buttons/1',
-                  family_member: 'http://localhost:8005/api/families/1'
+                  emergency_button_client: 1,
+                  family_member: 1
                 })
                 this.setState({
                   name: null,

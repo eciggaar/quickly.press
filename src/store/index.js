@@ -1,6 +1,7 @@
 import { apiClient } from 'mobx-rest'
 import adapter from 'mobx-rest-fetch-adapter'
 import { Family, Buttons, Schedules, Government } from './apis'
+import { extendObservable } from 'mobx';
 
 class Store {
   family;
@@ -9,6 +10,9 @@ class Store {
   government;
 
   constructor() {
+    extendObservable(this, {
+      active: false
+    });
     this.family = new Family();
     this.buttons = new Buttons();
     this.schedules = new Schedules();

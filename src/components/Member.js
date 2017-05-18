@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -17,7 +17,7 @@ class Member extends Component {
 
   render() {
     const { edit, name, phone_number } = this.state;
-    const { member } = this.props;
+    const { member, store } = this.props;
 
     if (edit) {
       return (
@@ -45,9 +45,9 @@ class Member extends Component {
 
     return (
       <tr className={classNames({
-        'is-selected': false
+        'is-selected': store.active === member.id
       })}>
-        <td><Link to={`/family/${member.id}`}>{member.get('name')}</Link></td>
+        <td><Link to={`/family/${member.id}`} onClick={() => store.active = member.id}>{member.get('name')}</Link></td>
         <td>{member.get('phone_number')}</td>
         <td>
           <a className="button is-white" onClick={() => {
@@ -72,4 +72,4 @@ class Member extends Component {
   }
 }
 
-export default observer(Member)
+export default inject('store')(observer(Member))
