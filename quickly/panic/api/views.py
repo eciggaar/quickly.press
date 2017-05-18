@@ -51,8 +51,8 @@ class PanicPost(APIView):
             raise NotFound
 
         # get lat long, randomize a little bit for demo purpose
-        lat = request.data.get('lat', 52.3862755) + random.randint(-10, 10) * 0.00001
-        long = request.data.get('lat', 4.8728798) + random.randint(-10, 10) * 0.00001
+        lat = float(request.data.get('lat', 52.3862755)) + random.randint(-10, 10) * 0.0001
+        long = float(request.data.get('long', 4.8728798)) + random.randint(-10, 10) * 0.0001
 
         api_token = 'RTDWFuAIoGzINuBTRDl5uDOiO'
         client = messagebird.Client(api_token)
@@ -78,7 +78,7 @@ class PanicPost(APIView):
 
     @staticmethod
     def _create_text_message(lat, long):
-        return u'panic ... Panic ... PANIC %s' % maps_web_address(lat, long)
+        return u'panic ... Panic ... PANIC\nLocation: %s' % maps_web_address(lat, long)
         # return u'panic ... Panic ... PANIC'
 
     @staticmethod

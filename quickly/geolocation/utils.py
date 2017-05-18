@@ -16,4 +16,4 @@ def find_address(lat, long):
 
 
 def maps_web_address(lat, long):
-    return 'https://maps.google.com/?q=%s%s' % (lat, long)
+    return 'https://maps.google.com/?q=%s,%s' % (lat, long)
