@@ -44,7 +44,7 @@ class Dashboard extends Component {
               </div>
               <div className="tile">
                 <div className="tile">
-                  <Link to="/schedules"><img src={schedules} alt="Schedules"/></Link>
+                  <Link to="/add"><img src={add_new} alt="Add new"/></Link>
                 </div>
               </div>
             </div>

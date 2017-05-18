@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
+import { Link } from 'react-router-dom';
 
 class Member extends Component {
 
@@ -43,7 +44,7 @@ class Member extends Component {
 
     return (
       <tr>
-        <td>{member.get('name')}</td>
+        <td><Link to={`/family/${member.id}`}>{member.get('name')}</Link></td>
         <td>{member.get('phone_number')}</td>
         <td>
           <a className="button is-white" onClick={() => {
