@@ -26,7 +26,7 @@ urlpatterns = [
 
     url(r'^admin', include(admin.site.urls)),
     url(r'^api/panic/get$', PanicGet.as_view()),
-    url(r'^api/panic/post$', PanicPost.as_view()),
+    url(r'^api/panic/$', PanicPost.as_view()),
     url(r'^api', include(router.urls)),
 ]
 

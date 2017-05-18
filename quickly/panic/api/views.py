@@ -1,15 +1,18 @@
 import datetime
 import json
+import random
 
+from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import detail_route
 
 import messagebird
 
-from quickly.buttons.models import EmergencyButtonClient
-from quickly.families.models import FamilyMember
-from quickly.schedules.models import Schedule
+from ...buttons.models import EmergencyButtonClient
+from ...families.models import FamilyMember
+from ...geolocation.utils import maps_web_address, find_address
+from ...schedules.models import Schedule
 
 
 class PanicGet(APIView):
@@ -33,31 +36,51 @@ class PanicPost(APIView):
         """
         Send a message via MessagBird and return the status.
         """
-        body_unicode = request.body.decode('utf-8')
-        # This is the actual post data
-        body = json.loads(body_unicode)
-        reciepient = []
         user = EmergencyButtonClient.objects.first()
         current_time = datetime.datetime.now().time()
         family_members = FamilyMember.objects.filter(emergency_button_client=user)
         schedules = Schedule.objects.filter(family_member__in=family_members,
                                             start__lte=current_time,
                                             end__gte=current_time)
+
+        recipients = []
         for schedule in schedules:
-            reciepient.append(schedule.family_member.phone_number)
+            recipients.append(schedule.family_member.phone_number)
+
+        if not len(recipients):
+            raise NotFound
+
+        # get lat long, randomize a little bit for demo purpose
+        lat = request.data.get('lat', 52.3862755) + random.randint(-10, 10) * 0.00001
+        long = request.data.get('lat', 4.8728798) + random.randint(-10, 10) * 0.00001
 
         api_token = 'RTDWFuAIoGzINuBTRDl5uDOiO'
         client = messagebird.Client(api_token)
 
+        # sent text message
+        text_message = self._create_text_message(lat, long)
         message = client.message_create(
             'MessageBird',
-            reciepient,
-            'panic ... Panic ... PANIC',
-            {'reference' : 'quicklypress'},
+            recipients,
+            text_message,
+            {'reference': 'quicklypress'},
         )
 
-        voice_message = client.voice_message_create(
-            '+31614665916',
-            'Panic, panic, panic',
-            {'language' : 'en-gb', 'voice': 'female' },
-        )
+        # sent voice message
+        # voice_message = self._create_voice_message(lat, long)
+        # result = client.voice_message_create(
+        #     '+31614665916',
+        #     voice_message,
+        #     {'language': 'en-gb', 'voice': 'female'},
+        # )
+
+        return Response({'status': 'success'}, status=200)
+
+    @staticmethod
+    def _create_text_message(lat, long):
+        return u'panic ... Panic ... PANIC %s' % maps_web_address(lat, long)
+        # return u'panic ... Panic ... PANIC'
+
+    @staticmethod
+    def _create_voice_message(lat, long):
+        return u'Panic, panic, panic! Location: %s' % find_address(lat, long)
