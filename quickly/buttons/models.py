@@ -12,3 +12,5 @@ class EmergencyButtonClient(models.Model):
     button_uuid = models.CharField(max_length=255)
     language = models.CharField(max_length=5)
 
+    def __str__(self):
+        return u'%s %s'

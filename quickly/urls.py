@@ -10,7 +10,7 @@ from quickly.schedules.api.view import SchedulesViewSet
 from quickly.services.api.view import ServiceViewSet
 from quickly.families.api.view import FamilyViewSet
 
-from quickly.panic.api.views import PanicGet, PanicPost
+from quickly.panic.api.views import Panic
 
 # Define routes, using the default router so the API is browsable.
 router = DefaultRouter(trailing_slash=False)
@@ -25,8 +25,7 @@ urlpatterns = [
         kwargs={'path': 'index.html'}),
 
     url(r'^admin', include(admin.site.urls)),
-    url(r'^api/panic/get$', PanicGet.as_view()),
-    url(r'^api/panic/$', PanicPost.as_view()),
+    url(r'^api/panic/$', Panic.as_view()),
     url(r'^api', include(router.urls)),
 ]
 
