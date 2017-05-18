@@ -22,7 +22,7 @@ class Panic(APIView):
     user = None
     coordinates = None
 
-    @detail_route(methods=['post'])
+    @detail_route(methods=['get'])
     def post(self, request, format=None):
         """
         Send a message via MessagBird and return the status.

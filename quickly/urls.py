@@ -3,7 +3,6 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.views import serve
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.routers import DefaultRouter
 
 from quickly.buttons.api.view import ButtonViewSet
@@ -26,7 +25,7 @@ urlpatterns = [
         kwargs={'path': 'index.html'}),
 
     url(r'^admin', include(admin.site.urls)),
-    url(r'^api/panic/$', csrf_exempt(Panic.as_view())),
+    url(r'^api/panic/$', Panic.as_view()),
     url(r'^api', include(router.urls)),
     url(r'^.*', serve, kwargs={'path': 'index.html'}),
 ]
