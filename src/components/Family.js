@@ -45,7 +45,7 @@ class Family extends Component {
               <colgroup width={100} />
               <colgroup width={100} />
               <tbody>
-                {family.models.map(member => <Member key={member.id} match={match} member={member}/>)}
+                {family.models.map(member => <Member key={member.id} member={member}/>)}
               </tbody>
             </table>
           </div>
@@ -87,7 +87,7 @@ class Family extends Component {
                 family.create({
                   name,
                   phone_number,
-                  emergency_button_client: 'http://localhost:8005/api/buttons/1',
+                  emergency_button_client: 1,
                   email: 'info@example.com'
                 })
                 this.setState({

@@ -8,7 +8,7 @@ class Member extends Model {
     extendObservable(this, {
       get schedules() {
         return rootStore.schedules.filter({
-          family_member: `http://localhost:8005/api/families/${this.id}`
+          family_member: this.id
         })
       }
     })

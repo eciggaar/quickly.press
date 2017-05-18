@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 class Member extends Component {
 
@@ -43,7 +44,9 @@ class Member extends Component {
     }
 
     return (
-      <tr>
+      <tr className={classNames({
+        'is-selected': false
+      })}>
         <td><Link to={`/family/${member.id}`}>{member.get('name')}</Link></td>
         <td>{member.get('phone_number')}</td>
         <td>

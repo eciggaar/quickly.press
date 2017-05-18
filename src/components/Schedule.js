@@ -68,8 +68,8 @@ class Schedule extends Component {
                   store.schedules.create({
                     start: '0:00',
                     end: '0:00',
-                    emergency_button_client: 'http://localhost:8005/api/buttons/1',
-                    family_member: `http://localhost:8005/api/families/${member.id}`
+                    emergency_button_client: 1,
+                    family_member: member.id
                   })
                 }}>
                   <span>Add row</span>
@@ -81,8 +81,6 @@ class Schedule extends Component {
             </tr>
           </tfoot>
         </table>
-
-
       </div>
     )
   }
