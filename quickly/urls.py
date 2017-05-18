@@ -25,7 +25,7 @@ urlpatterns = [
         kwargs={'path': 'index.html'}),
 
     url(r'^admin', include(admin.site.urls)),
-    url(r'^api/panic/$', Panic.as_view()),
+    url(r'^api/panic$', Panic.as_view()),
     url(r'^api', include(router.urls)),
     url(r'^.*', serve, kwargs={'path': 'index.html'}),
 ]
