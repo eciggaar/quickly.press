@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { Route } from 'react-router-dom';
 import Member from './Member';
 import Heading from './Heading';
+import Schedule from './Schedule';
 import './Family.css';
 
 class Family extends Component {
@@ -19,7 +21,7 @@ class Family extends Component {
   }
 
   render() {
-    const { store } = this.props;
+    const { store, match } = this.props;
     const { family } = store;
 
     if (family.isRequest('fetching')) {
@@ -36,14 +38,21 @@ class Family extends Component {
           Family
         </Heading>
 
-        <table className="table">
-          <colgroup width={100} />
-          <colgroup width={100} />
-          <colgroup width={100} />
-          <tbody>
-            {family.models.map(member => <Member key={member.id} member={member} />)}
-          </tbody>
-        </table>
+        <div className="columns">
+          <div className="column">
+            <table className="table">
+              <colgroup width={100} />
+              <colgroup width={100} />
+              <colgroup width={100} />
+              <tbody>
+                {family.models.map(member => <Member key={member.id} match={match} member={member}/>)}
+              </tbody>
+            </table>
+          </div>
+          <div className="column">
+            <Route path={`${match.url}/:familyId`} component={Schedule}/>
+          </div>
+        </div>
 
         <section>
           <div className="field">

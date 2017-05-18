@@ -1,71 +1,91 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
 class Schedule extends Component {
-
-  constructor(props) {
-    super(props);
-    const { schedule } = props
-    this.state = {
-      edit: false,
-      start: schedule.get('start'),
-      end: schedule.get('end')
-    }
+  componentWillMount() {
+    const { store } = this.props;
+    store.schedules.fetch();
   }
 
   render() {
-    const { edit, start, end } = this.state;
-    const { schedule } = this.props;
+    const { store, match } = this.props;
+    const { familyId } = match.params;
 
-    if (edit) {
+    const member = store.family.get(+familyId);
+
+    const schedules = member.schedules;
+
+    if (!schedules) {
       return (
-        <tr>
-          <td><input className="input" value={start} onChange={(e) => {
-            this.setState({ start: e.target.value })
-          }} /></td>
-          <td><input className="input" value={end} onChange={(e) => {
-            this.setState({ end: e.target.value })
-          }} /></td>
-          <td>
-            <a className="button is-white is-primary" onClick={async () => {
-              await schedule.save({ start, end })
-              this.setState({ edit: false })
-            }}>
-              <span>Done</span>
-              <span className="icon is-small">
-                <i className="fa fa-check"></i>
-              </span>
-            </a>
-          </td>
-        </tr>
+        <div>
+          Loading ...
+        </div>
       )
     }
 
     return (
-      <tr>
-        <td>{schedule.get('start')}</td>
-        <td>{schedule.get('end')}</td>
-        <td>
-          <a className="button is-white" onClick={() => {
-            this.setState({ edit: true })
-          }}>
-            <span>Edit</span>
-            <span className="icon is-small">
-              <i className="fa fa-edit"></i>
-            </span>
-          </a>
-          <a className="button is-white is-danger" onClick={() => {
-            schedule.destroy();
-          }}>
-            <span>Remove</span>
-            <span className="icon is-small">
-              <i className="fa fa-times"></i>
-            </span>
-          </a>
-        </td>
-      </tr>
+      <div>
+        <table className="table">
+          <colgroup width={100} />
+          <colgroup width={100} />
+          <colgroup width={100} />
+          <tbody>
+            {schedules.map(schedule => {
+              return (
+                <tr key={schedule.id}>
+                  <td>
+                    <input className="input" value={schedule.get('start')} onChange={(e) => {
+                      schedule.set({ start: e.target.value })
+                    }} onBlur={() => {
+                      schedule.save({ start: schedule.get('start') })
+                    }} />
+                  </td>
+                  <td>
+                    <input className="input" value={schedule.get('end')} onChange={(e) => {
+                      schedule.set({ end: e.target.value })
+                    }} onBlur={() => {
+                      schedule.save({ end: schedule.get('end') })
+                    }}/>
+                  </td>
+                  <td>
+                    <a className="button is-white is-danger" onClick={() => {
+                      schedule.destroy();
+                    }}>
+                      <span>Remove</span>
+                      <span className="icon is-small">
+                        <i className="fa fa-times"></i>
+                      </span>
+                    </a>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="3">
+                <a className="button is-white is-info" onClick={() => {
+                  store.schedules.create({
+                    start: '0:00',
+                    end: '0:00',
+                    emergency_button_client: 'http://localhost:8005/api/buttons/1',
+                    family_member: `http://localhost:8005/api/families/${member.id}`
+                  })
+                }}>
+                  <span>Add row</span>
+                  <span className="icon is-small">
+                    <i className="fa fa-plus"></i>
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
+
+      </div>
     )
   }
 }
 
-export default observer(Schedule)
+export default inject('store')(observer(Schedule));
