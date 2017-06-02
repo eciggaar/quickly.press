@@ -3,7 +3,7 @@ from quickly.settings.base import *  # noqa
 DEBUG = boolean(os.environ.get('DEBUG', 1))
 TEMPLATE_DEBUG = boolean(os.environ.get('DEBUG', DEBUG))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
